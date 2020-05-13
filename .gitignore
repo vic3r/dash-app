@@ -1,0 +1,28 @@
+# files  
+.DS_Store
+.env
+.flaskenv
+*.pyc
+*.pyo
+env*
+*.egg
+_mailinglist
+.vscode
+
+# directories
+__pycache__/
+dist/
+build/
+env/
+.tox/
+.cache/
+.pytest_cache/
+.idea/
+docs/_build/
+*.egg-info/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+*,cover
