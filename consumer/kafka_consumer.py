@@ -1,20 +1,23 @@
 import json
 
 from confluent_kafka import Consumer, KafkaError
-from api.imdb_client import search_film
+from api.imdb_client import get_film
 
 consumer = Consumer({
     'bootstrap.servers': 'localhost:9092',
-    'group.id': 'broker1',
-    'auto.offset.reset' : 'earliest',
+    'group.id': 'group1',
+    'client.id': 'client-1',
+    'enable.auto.commit': True,
+    'session.timeout.ms': 20000,
+    'default.topic.config': {'auto.offset.reset': 'smallest'}
 })
 
-consumer.subscribe(['topic1'])
+consumer.subscribe(['first-topic'])
 films = []
 
 while True:
     msg = consumer.poll(1.0)
-
+    print("connected")
     if msg is None:
         continue
     if msg.error():
