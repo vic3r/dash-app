@@ -9,6 +9,7 @@ The first dash app for movie & tv series analytics
 Run the following commands in the root directory: 
 - `virtualenv env`
 - `source venv/bin/activate`
+- `pip install -r requirements.txt`
 
 # Run
 - `pip install -r requirements.txt`
