@@ -20,7 +20,7 @@ def produce_data(film):
 
 while id is not None:
     p.poll(0)
-    p.produce('topic1', id.encode('utf-8'), callback=delivery_report)
+    p.produce('first-topic', id.encode('utf-8'), callback=delivery_report)
     id, code = None, None
 
 # Clean the actual producer

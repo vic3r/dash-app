@@ -8,20 +8,17 @@ import os
 
 load_dotenv()
 
-API_URL = os.getenv("API_URL")
-API_TOKEN = os.getenv("API_TOKEN")
+API_URL = os.getenv("IMDB_API_URL")
+API_TOKEN = os.getenv("IMDB_API_TOKEN")
 
-
-api_url = API_URL
-api_token = API_TOKEN
 
 # Get url from settings
-url = "https://" + api_url
+url = "https://" + API_URL
 
 # Extract key from settings
 headers = {
-    'x-rapidapi-host': api_url,
-    'x-rapidapi-key': api_token
+    'x-rapidapi-host': API_URL,
+    'x-rapidapi-key': API_TOKEN
 }
 
 def search_film(filmName: str) -> (str, int):
